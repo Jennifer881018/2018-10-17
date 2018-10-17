@@ -198,8 +198,35 @@ b</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnb29nbGVzaGVldHMpXG5gYGAifQ== -->
+<pre class="r"><code>library(googlesheets)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3NfYXV0aCAobmV3X3VzZXIgPSBUUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>gs_auth (new_user = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRGlzYWJsaW5nIC5odHRyLW9hdXRoIGJ5IHJlbmFtaW5nIHRvIC5odHRyLW9hdXRoLVNVU1BFTkRFRFxuTm8gdG9rZW4gY3VycmVudGx5IGluIGZvcmNlLlxuV2FpdGluZyBmb3IgYXV0aGVudGljYXRpb24gaW4gYnJvd3Nlci4uLlxuUHJlc3MgRXNjL0N0cmwgKyBDIHRvIGFib3J0XG5BdXRoZW50aWNhdGlvbiBjb21wbGV0ZS5cbiJ9 -->
+<pre><code>Disabling .httr-oauth by renaming to .httr-oauth-SUSPENDED
+No token currently in force.
+Waiting for authentication in browser...
+Press Esc/Ctrl + C to abort
+Authentication complete.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3NTdXJ2ZXk8LWdzX2tleShcIjFtQzlibnhqMTFOQ05vT0N3MFZtbjRueEVSYkh0TGplR285djlDOWIyR0RFXCIpICAjZG93bmxvYWQgc2hlZXQgaW5mb3JtYXRpb24gYXMgYW4gb2JqZWN0XG5jbGFzc1N1cnZleTwtZ3NfcmVhZChnc1N1cnZleSx3cz0xKSAjYWNjZXNzIHRoZSAxc3Qgd29ya3NoZWV0XG5gYGAifQ== -->
+<pre class="r"><code>gsSurvey&lt;-gs_key(&quot;1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE&quot;)  #download sheet information as an object
+classSurvey&lt;-gs_read(gsSurvey,ws=1) #access the 1st worksheet</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTguMTAuMTciDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KYGBge3J9DQpsaWJyYXJ5KHJlYWRyKQ0KZmlsbVZvdGluZ0RhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvJUU3JUFDJUFDJUU0JUI4JTg5JUU1JUIxJTg2JUU3JUI2JTkzJUU2JUJGJTlGJUU2JTkyJUFEJUU1JUFFJUEyJUU3JUFCJUI2JUU4JUIzJUJEJUU1JThGJTgzJUU4JUIzJUJEJUU0JUJEJTlDJUU1JTkzJTgxJUU2JThBJTk1JUU3JUE1JUE4JUU3JUI1JTkwJUU2JTlFJTlDJUU2JUE4JUEzJUU2JTlDJUFDJTIwLSUyMFNoZWV0MS5jc3YiKQ0KYGBgDQoNCmBgYHtyfQ0KYTwtYygiQSwgQiIsIkIsIEMiKQ0KYQ0Kc3RyX3NwbGl0X2ZpeGVkKGEsIiwgIiwgbj0zKS0+Yg0Kc3RyX2MoYiktPmMNCmMNCnRhYmxlKGIpDQpiDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTguMTAuMTciDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KYGBge3J9DQpsaWJyYXJ5KHJlYWRyKQ0KZmlsbVZvdGluZ0RhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvJUU3JUFDJUFDJUU0JUI4JTg5JUU1JUIxJTg2JUU3JUI2JTkzJUU2JUJGJTlGJUU2JTkyJUFEJUU1JUFFJUEyJUU3JUFCJUI2JUU4JUIzJUJEJUU1JThGJTgzJUU4JUIzJUJEJUU0JUJEJTlDJUU1JTkzJTgxJUU2JThBJTk1JUU3JUE1JUE4JUU3JUI1JTkwJUU2JTlFJTlDJUU2JUE4JUEzJUU2JTlDJUFDJTIwLSUyMFNoZWV0MS5jc3YiKQ0KYGBgDQoNCmBgYHtyfQ0KYTwtYygiQSwgQiIsIkIsIEMiKQ0KYQ0Kc3RyX3NwbGl0X2ZpeGVkKGEsIiwgIiwgbj0zKS0+Yg0Kc3RyX2MoYiktPmMNCmMNCnRhYmxlKGIpDQpiDQpgYGANCg0KYGBge3J9DQpsaWJyYXJ5KGdvb2dsZXNoZWV0cykNCmBgYA0KDQpgYGB7cn0NCmdzX2F1dGggKG5ld191c2VyID0gVFJVRSkNCmBgYA0KYGBge3J9DQpnc1N1cnZleTwtZ3Nfa2V5KCIxbUM5Ym54ajExTkNOb09DdzBWbW40bnhFUmJIdExqZUdvOXY5QzliMkdERSIpICAjZG93bmxvYWQgc2hlZXQgaW5mb3JtYXRpb24gYXMgYW4gb2JqZWN0DQpjbGFzc1N1cnZleTwtZ3NfcmVhZChnc1N1cnZleSx3cz0xKSAjYWNjZXNzIHRoZSAxc3Qgd29ya3NoZWV0DQpgYGANCg0KDQo=</div>
 
 
 
