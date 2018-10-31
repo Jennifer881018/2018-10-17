@@ -1,0 +1,20 @@
+---
+title: "2018-10-31"
+output: html_notebook
+---
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+```{r}
+StuDF$StuID
+StuDF[,c("StuID")]
+StuDF$name
+StuDF[,c("name")]
+```
+
