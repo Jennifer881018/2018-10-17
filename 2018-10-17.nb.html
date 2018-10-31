@@ -199,8 +199,95 @@ StuDF[,c(&quot;name&quot;)]</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbLGMoXCJTdHVJRFwiLFwibmFtZVwiKV1cblxuIyMg54Sh5rOV55SoJOS4gOasoeWPluWFqeWAi+WFg+e0oFxuIyBTdHVERiRjKFwiU3R1SURcIixcIm5hbWVcIilcbmBgYCJ9 -->
+<pre class="r"><code>StuDF[,c(&quot;StuID&quot;,&quot;name&quot;)]
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTAtMzEiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KYGBge3J9DQpTdHVERiA8LSBkYXRhLmZyYW1lKA0KICBTdHVJRD1jKDEsMiwzLDQsNSksDQogIG5hbWU9Yygi5bCP5piOIiwi5aSn6ZuEIiwi6IOW6JmOIiwi5bCP5pawIiwi5aSn55m9IiksDQogIHNjb3JlPWMoODAsNjAsOTAsNzAsNTApDQogICkNClN0dURGIA0KYGBgDQoNCmBgYHtyfQ0KU3R1REYkU3R1SUQNClN0dURGWyxjKCJTdHVJRCIpXQ0KU3R1REYkbmFtZQ0KU3R1REZbLGMoIm5hbWUiKV0NCmBgYA0KDQo=</div>
+## 無法用$一次取兩個元素
+# StuDF$c(&quot;StuID&quot;,&quot;name&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLGMoMildXG5TdHVERlssYygyKV1bYygxLDQpXVxuXG4jIyB0aGUgc2Vjb25kIG9uZSBpcyBlcXVpdmFsZW50IHRvIFxuU3R1REZbLGMoMildIC0+IGFhXG5hYVtjKDEsNCldIFxuYGBgIn0= -->
+<pre class="r"><code>StuDF[c(1,4),c(2)]
+StuDF[,c(2)][c(1,4)]
+
+## the second one is equivalent to 
+StuDF[,c(2)] -&gt; aa
+aa[c(1,4)] </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REYkbmFtZVtjKDEsNCldXG5TdHVERltjKDEsNCksXSRuYW1lXG5gYGAifQ== -->
+<pre class="r"><code>StuDF$name[c(1,4)]
+StuDF[c(1,4),]$name</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REYkYyhcIlN0dUlEXCIsXCJuYW1lXCIpXG5TdHVERiRbYyhcIlN0dUlEXCIsXCJuYW1lXCIpXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF$c(&quot;StuID&quot;,&quot;name&quot;)
+StuDF$[c(&quot;StuID&quot;,&quot;name&quot;)]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoU3R1REYpXG5gYGAifQ== -->
+<pre class="r"><code>names(StuDF)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoU3R1REYpIDwtIGMoXCLlrbjomZ9cIixcIuWnk+WQjVwiLFwi5oiQ57i+XCIpXG5uYW1lcyhTdHVERilcbmBgYCJ9 -->
+<pre class="r"><code>names(StuDF) &lt;- c(&quot;學號&quot;,&quot;姓名&quot;,&quot;成績&quot;)
+names(StuDF)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbnN0dWRlbnQgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2NvdXJzZS0xMDctMS1wcm9ncmFtbWluZy1mb3ItZGF0YS1zY2llbmNlL21hc3Rlci9kYXRhL3N0dWRlbnQuY3N2XCIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShtYWdyaXR0cilcbnN0dWRlbnQgJTw+JSBtdXRhdGUoXG4gIOi6q+mrmOe0mui3nT1jdXQo6Lqr6auYLGMoMCwxNTAsMTU1LDE2MCwxNjUsMTcwLDE3NSwxODAsMTg1LDIwMCkpKVxuYGBgIn0= -->
+<pre class="r"><code>library(readr)
+student &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv&quot;)
+library(dplyr)
+library(magrittr)
+student %&lt;&gt;% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKHN0dWRlbnQk6Lqr6auY57Sa6LedKVxuYGBgIn0= -->
+<pre class="r"><code>levels(student$身高級距)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REYk5oiQ57i+W2MoNCldXG5TdHVERiTmiJDnuL5bYyg0KV0gPC0gNzVcbmBgYCJ9 -->
+<pre class="r"><code>StuDF$成績[c(4)]
+StuDF$成績[c(4)] &lt;- 75</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudCTmlrDouqvpq5jntJrot50gPC0gc3R1ZGVudCTouqvpq5jntJrot51cbmBgYCJ9 -->
+<pre class="r"><code>student$新身高級距 &lt;- student$身高級距</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTAtMzEiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KYGBge3J9DQpTdHVERiA8LSBkYXRhLmZyYW1lKA0KICBTdHVJRD1jKDEsMiwzLDQsNSksDQogIG5hbWU9Yygi5bCP5piOIiwi5aSn6ZuEIiwi6IOW6JmOIiwi5bCP5pawIiwi5aSn55m9IiksDQogIHNjb3JlPWMoODAsNjAsOTAsNzAsNTApDQogICkNClN0dURGIA0KYGBgDQoNCmBgYHtyfQ0KU3R1REYkU3R1SUQNClN0dURGWyxjKCJTdHVJRCIpXQ0KU3R1REYkbmFtZQ0KU3R1REZbLGMoIm5hbWUiKV0NCmBgYA0KDQpgYGB7cn0NClN0dURGWyxjKCJTdHVJRCIsIm5hbWUiKV0NCg0KIyMg54Sh5rOV55SoJOS4gOasoeWPluWFqeWAi+WFg+e0oA0KIyBTdHVERiRjKCJTdHVJRCIsIm5hbWUiKQ0KYGBgDQoNCmBgYHtyfQ0KU3R1REZbYygxLDQpLGMoMildDQpTdHVERlssYygyKV1bYygxLDQpXQ0KDQojIyB0aGUgc2Vjb25kIG9uZSBpcyBlcXVpdmFsZW50IHRvIA0KU3R1REZbLGMoMildIC0+IGFhDQphYVtjKDEsNCldIA0KYGBgDQoNCmBgYHtyfQ0KU3R1REYkbmFtZVtjKDEsNCldDQpTdHVERltjKDEsNCksXSRuYW1lDQpgYGANCg0KYGBge3J9DQpTdHVERiRjKCJTdHVJRCIsIm5hbWUiKQ0KU3R1REYkW2MoIlN0dUlEIiwibmFtZSIpXQ0KYGBgDQoNCmBgYHtyfQ0KbmFtZXMoU3R1REYpDQpgYGANCg0KYGBge3J9DQpuYW1lcyhTdHVERikgPC0gYygi5a246JmfIiwi5aeT5ZCNIiwi5oiQ57i+IikNCm5hbWVzKFN0dURGKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkcikNCnN0dWRlbnQgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvc3R1ZGVudC5jc3YiKQ0KbGlicmFyeShkcGx5cikNCmxpYnJhcnkobWFncml0dHIpDQpzdHVkZW50ICU8PiUgbXV0YXRlKA0KICDouqvpq5jntJrot509Y3V0KOi6q+mrmCxjKDAsMTUwLDE1NSwxNjAsMTY1LDE3MCwxNzUsMTgwLDE4NSwyMDApKSkNCmBgYA0KDQpgYGB7cn0NCmxldmVscyhzdHVkZW50JOi6q+mrmOe0mui3nSkNCmBgYA0KDQpgYGB7cn0NClN0dURGJOaIkOe4vltjKDQpXQ0KU3R1REYk5oiQ57i+W2MoNCldIDwtIDc1DQpgYGANCg0KYGBge3J9DQpzdHVkZW50JOaWsOi6q+mrmOe0mui3nSA8LSBzdHVkZW50JOi6q+mrmOe0mui3nQ0KYGBgDQoNCg==</div>
 
 
 

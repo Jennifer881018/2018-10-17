@@ -18,3 +18,60 @@ StuDF$name
 StuDF[,c("name")]
 ```
 
+```{r}
+StuDF[,c("StuID","name")]
+
+## 無法用$一次取兩個元素
+# StuDF$c("StuID","name")
+```
+
+```{r}
+StuDF[c(1,4),c(2)]
+StuDF[,c(2)][c(1,4)]
+
+## the second one is equivalent to 
+StuDF[,c(2)] -> aa
+aa[c(1,4)] 
+```
+
+```{r}
+StuDF$name[c(1,4)]
+StuDF[c(1,4),]$name
+```
+
+```{r}
+StuDF$c("StuID","name")
+StuDF$[c("StuID","name")]
+```
+
+```{r}
+names(StuDF)
+```
+
+```{r}
+names(StuDF) <- c("學號","姓名","成績")
+names(StuDF)
+```
+
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+library(dplyr)
+library(magrittr)
+student %<>% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))
+```
+
+```{r}
+levels(student$身高級距)
+```
+
+```{r}
+StuDF$成績[c(4)]
+StuDF$成績[c(4)] <- 75
+```
+
+```{r}
+student$新身高級距 <- student$身高級距
+```
+
